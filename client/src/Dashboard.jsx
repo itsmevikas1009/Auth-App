@@ -9,7 +9,7 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
-    if (user) {
+    if (user === null) {
       navigate("/");
     }
     document.title = "Auth App - Home";
