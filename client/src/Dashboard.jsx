@@ -9,6 +9,9 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
     setUser(JSON.parse(localStorage.getItem("user")));
     document.title = "Auth App - Home";
   }, []);
