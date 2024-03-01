@@ -9,7 +9,9 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
-    // setUser(JSON.parse(localStorage.getItem("user")));
+    if (!user) {
+      setUser({ accountType: false });
+    }
     document.title = "Auth App - Home";
   }, []);
 
