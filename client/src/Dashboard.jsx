@@ -9,8 +9,8 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
-    if (!user) {
-      setUser({ accountType: false });
+    if (user) {
+      navigate("/");
     }
     document.title = "Auth App - Home";
   }, []);
@@ -38,7 +38,7 @@ function Dashboard({ user, setUser }) {
               </div>
             </div>
           ) : (
-            () => navigate("/")
+            <div>Hello Bhai</div>
           )
         ) : (
           <div>Hello</div>
