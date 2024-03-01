@@ -9,7 +9,7 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
-    if (user === null) {
+    if (user) {
       navigate("/");
     }
     document.title = "Auth App - Home";
@@ -38,10 +38,10 @@ function Dashboard({ user, setUser }) {
               </div>
             </div>
           ) : (
-            setUser(null)
+            setUser()
           )
         ) : (
-          setUser(null)
+          setUser()
         )}
       </div>
     </>
