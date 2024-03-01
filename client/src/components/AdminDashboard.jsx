@@ -24,15 +24,15 @@ function AdminDashboard() {
     fetchUserData();
   }, [userList]);
   return (
-    <div className="flex flex-col gap-5 items-center max-h-screen  w-2/5 min-w-[230px] mx-auto py-[3rem] text-richblack-5">
-      <h1 className="text-2xl font-bold pb-6 text-white">Admin Dashboard</h1>
+    <div className="flex flex-col gap-5 items-center max-h-screen sm:w-11/12 w-2/5 mx-auto  py-[3rem] text-white">
+      <h1 className="text-2xl font-bold pb-6">Admin Dashboard</h1>
       {userList.map((item) => (
         <div
           key={item._id}
           className="w-full flex items-center justify-between py-2 rounded-md px-4 border border-gray-400"
         >
           <div className="flex items-center gap-2 flex-wrap">
-            <h2 className="text-xl text-white">
+            <h2 className="text-xl ">
               {item.firstName} {item?.lastName}
             </h2>
             <h2 className="text-sm italic text-gray-400"> ~ {item.email}</h2>
@@ -46,7 +46,7 @@ function AdminDashboard() {
             </button> */}
             <button
               onClick={() => submitHandler(item._id)}
-              className=" bg-yellow-400 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1  rounded-md "
+              className=" bg-gray-400 text-gray-900 font-semibold text-lg  py-[1px] px-3 min:px-1  rounded-md "
             >
               Verify
             </button>
