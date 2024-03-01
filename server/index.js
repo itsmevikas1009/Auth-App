@@ -12,9 +12,9 @@ const PORT = 3000;
 const app = express();
 
 const localURL = "http://localhost:5173"
-const vercelURL = "https://todo-app-murex-rho.vercel.app"
+const vercelURL = "https://auth-app-client-black.vercel.app"
 
-const URL = localURL;  // Change to localURL if you are running the server locally
+const URL = vercelURL;  // Change to localURL if you are running the server locally
 
 const corsOption = {
     origin: URL,
