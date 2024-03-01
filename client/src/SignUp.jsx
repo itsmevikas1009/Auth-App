@@ -25,7 +25,7 @@ function SignUp({ user, setUser }) {
       navigate("/dashboard");
     }
 
-    document.title = "Todo App - SignUp";
+    document.title = "Auth App - SignUp";
   }, []);
 
   const handleSignUp = (e) => {
