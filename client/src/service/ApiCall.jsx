@@ -8,8 +8,8 @@ const URL = vercelURL; // Change to localURL if testing locally
 const loginURL = `${URL}/login`;
 const signUpURL = `${URL}/signup`;
 const logoutURL = `${URL}/logout`;
-const getUserURL = `${localURL}/admin/dashboard`;
-const approveUserURL = `${localURL}/admin/dashboard/approve`;
+const getUserURL = `${URL}/admin/dashboard`;
+const approveUserURL = `${URL}/admin/dashboard/approve`;
 
 const LoginApi = async (data) => {
   return await axios.post(loginURL, data, {
