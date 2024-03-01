@@ -13,7 +13,7 @@ function Dashboard({ user, setUser }) {
       navigate("/");
     }
     document.title = "Auth App - Home";
-  }, []);
+  }, [user]);
 
   return (
     <>
@@ -38,10 +38,10 @@ function Dashboard({ user, setUser }) {
               </div>
             </div>
           ) : (
-            <div>Hello Bhai</div>
+            setUser(null)
           )
         ) : (
-          <div>Hello</div>
+          setUser(null)
         )}
       </div>
     </>
