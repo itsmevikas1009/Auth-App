@@ -29,18 +29,28 @@ function AdminDashboard() {
       {userList.map((item) => (
         <div
           key={item._id}
-          className="w-full flex items-center justify-between text-richblack-5 bg-richblack-700 py-2 rounded-md px-4 border border-gray-400"
+          className="w-full flex items-center justify-between py-2 rounded-md px-4 border border-gray-400"
         >
-          <h2 className="text-xl text-white">
-            {item.firstName} {item?.lastName}
-          </h2>
-          <h4 className="text-sm">{item.email}</h4>
-          <button
-            onClick={() => submitHandler(item._id)}
-            className=" bg-gray-400 text-gray-900 font-semibold text-lg  py-[1px] px-3 rounded-md "
-          >
-            Verify
-          </button>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h2 className="text-xl text-white">
+              {item.firstName} {item?.lastName}
+            </h2>
+            <h2 className="text-sm italic text-gray-400"> ~ {item.email}</h2>
+          </div>
+          <div className="flex items-center gap-4 flex-wrap">
+            {/* <button
+              onClick={() => declineHandler(item._id)}
+              className=" bg-red-500 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1 rounded-md "
+            >
+              Decline
+            </button> */}
+            <button
+              onClick={() => submitHandler(item._id)}
+              className=" bg-yellow-400 text-richblack-700 font-semibold text-lg  py-[1px] px-3 min:px-1  rounded-md "
+            >
+              Verify
+            </button>
+          </div>
         </div>
       ))}
     </div>
