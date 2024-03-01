@@ -16,7 +16,7 @@ function NavBar({ user, setUser }) {
     try {
       const res = await LogoutApi();
       localStorage.clear();
-      setUser({ accountType: "" });
+      setUser(null);
       alert(res.data.message);
       window.location.reload();
       navigate("/");
