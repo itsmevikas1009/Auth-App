@@ -41,7 +41,7 @@ function Dashboard({ user, setUser }) {
             () => navigate("/")
           )
         ) : (
-          () => navigate("/")
+          <div>Hello</div>
         )}
       </div>
     </>

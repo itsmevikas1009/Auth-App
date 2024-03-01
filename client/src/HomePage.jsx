@@ -12,7 +12,6 @@ function HomePage({ user, setUser }) {
   }, []);
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
       <div className="dark:text-white text-gray-900 text-5xl text-center my-20">
         Welcome to Our&nbsp;
         <h1
