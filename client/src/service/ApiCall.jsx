@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const localURL = "http://localhost:3000/api";
-const vercelURL = "https://auth-app-server-five.vercel.app/";
+const vercelURL = "https://auth-app-server-five.vercel.app/api";
 
 const URL = vercelURL; // Change to localURL if testing locally
 
