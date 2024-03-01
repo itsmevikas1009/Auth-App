@@ -19,7 +19,7 @@ function Dashboard({ user, setUser }) {
     <>
       <NavBar user={user} setUser={setUser} />
       <div className="pt-16">
-        {user ? ({ user.accountType === "Admin" ? (
+        {user.accountType === "Admin" ? (
           <AdminDashboard />
         ) : user.accountType === "User" ? (
           <div className="lg:flex lg:justify-center lg:items-center text-center lg:pt-16">
@@ -37,8 +37,6 @@ function Dashboard({ user, setUser }) {
             </div>
           </div>
         ) : (
-          () => navigate("/")
-        )}) : (
           () => navigate("/")
         )}
       </div>
