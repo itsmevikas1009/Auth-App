@@ -24,7 +24,7 @@ function AdminDashboard() {
     fetchUserData();
   }, [userList]);
   return (
-    <div className="flex flex-col gap-5 items-center max-h-screen sm:w-2/5 w-4/5 mx-auto  py-[3rem] text-white">
+    <div className="flex flex-col gap-5 items-center max-h-screen md:w-2/5 w-4/5 mx-auto  py-[3rem] text-white">
       <h1 className="text-2xl font-bold pb-6">Admin Dashboard</h1>
       {userList.map((item) => (
         <div

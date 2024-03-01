@@ -9,10 +9,7 @@ function Dashboard({ user, setUser }) {
 
   // Fetching the list of tasks on page load
   useEffect(() => {
-    if (!user) {
-      navigate("/");
-    }
-    setUser(JSON.parse(localStorage.getItem("user")));
+    // setUser(JSON.parse(localStorage.getItem("user")));
     document.title = "Auth App - Home";
   }, []);
 
@@ -22,7 +19,7 @@ function Dashboard({ user, setUser }) {
       <div className="pt-16">
         {user.accountType === "Admin" ? (
           <AdminDashboard />
-        ) : (
+        ) : user.accountType === "User" ? (
           <div className="lg:flex lg:justify-center lg:items-center text-center lg:pt-16">
             <div>
               <div className="">
@@ -37,6 +34,8 @@ function Dashboard({ user, setUser }) {
               <Animation />
             </div>
           </div>
+        ) : (
+          () => navigate("/")
         )}
       </div>
     </>
