@@ -14,38 +14,39 @@ function Dashboard({ user, setUser }) {
     }
     document.title = "Auth App - Home";
   }, []);
-
-  if (user.accountType === "Admin") {
-    return (
-      <>
-        <NavBar user={user} setUser={setUser} />
-        <div className="pt-16">
-          <AdminDashboard />
-        </div>
-      </>
-    );
-  } else if (user.accountType === "User") {
-    return (
-      <>
-        <NavBar user={user} setUser={setUser} />
-        <div className="pt-16">
-          <div className="lg:flex lg:justify-center lg:items-center text-center lg:pt-16">
-            <div>
-              <div className="">
-                <h1 className="sm:text-4xl sm:m-5 sm:mt-0 mt-4 text-2xl dark:text-white text-gray-900">
-                  Hello{" "}
-                  <span className="text-[#bfe1d4] dark:text-[#00df9a]">
-                    {user.firstName},
-                  </span>{" "}
-                  Welcome to
-                </h1>
+  if (user) {
+    if (user.accountType === "Admin") {
+      return (
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <div className="pt-16">
+            <AdminDashboard />
+          </div>
+        </>
+      );
+    } else if (user.accountType === "User") {
+      return (
+        <>
+          <NavBar user={user} setUser={setUser} />
+          <div className="pt-16">
+            <div className="lg:flex lg:justify-center lg:items-center text-center lg:pt-16">
+              <div>
+                <div className="">
+                  <h1 className="sm:text-4xl sm:m-5 sm:mt-0 mt-4 text-2xl dark:text-white text-gray-900">
+                    Hello{" "}
+                    <span className="text-[#bfe1d4] dark:text-[#00df9a]">
+                      {user.firstName},
+                    </span>{" "}
+                    Welcome to
+                  </h1>
+                </div>
+                <Animation />
               </div>
-              <Animation />
             </div>
           </div>
-        </div>
-      </>
-    );
+        </>
+      );
+    }
   } else {
     return null;
   }
