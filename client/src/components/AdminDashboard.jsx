@@ -34,6 +34,7 @@ function AdminDashboard() {
           <h2 className="text-xl text-white">
             {item.firstName} {item?.lastName}
           </h2>
+          <h4 className="text-sm">{item.email}</h4>
           <button
             onClick={() => submitHandler(item._id)}
             className=" bg-gray-400 text-gray-900 font-semibold text-lg  py-[1px] px-3 rounded-md "
