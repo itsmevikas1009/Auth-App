@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
 
-const SignUp = async (req, res) => {
+const SignUp = asyncHandler(async (req, res) => {
     const { firstName, lastName, email, password, accountType = 'User' } = req.body;
 
     if (!email || !password || !firstName) {
@@ -21,7 +22,7 @@ const SignUp = async (req, res) => {
         password,
         accountType
     })
-    return res.json({ status: 200, message: "Registerd Successfully!" });
-}
+    return res.json({ status: 200, message: "Registered Successfully!" });
+});
 
 export default SignUp;
