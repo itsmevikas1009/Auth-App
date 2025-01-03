@@ -1,6 +1,7 @@
 import { User } from "../models/user.model.js"
+import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const AdminDashboard = async (req, res) => {
+export const AdminDashboard = asyncHandler(async (req, res) => {
     try {
         if (req.accountType !== 'Admin') {
             return res.json({ status: 402, message: 'You are not admin!' })
@@ -11,10 +12,10 @@ export const AdminDashboard = async (req, res) => {
     } catch (err) {
         return res.json({ status: 403, Error: err });
     }
-}
+})
 
 
-export const ApproveUserAccount = async (req, res) => {
+export const ApproveUserAccount = asyncHandler(async (req, res) => {
     try {
         if (req.accountType !== 'Admin') {
             return res.json({ status: 401, message: 'You are not admin!' });
@@ -34,4 +35,4 @@ export const ApproveUserAccount = async (req, res) => {
 
     }
 
-}
+})

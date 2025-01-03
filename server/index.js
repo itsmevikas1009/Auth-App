@@ -26,9 +26,7 @@ const URL = vercelURL;  // Change to localURL if you are running the server loca
 
 const corsOption = {
     origin: URL,
-    methods: ['POST', 'GET'],
-    credentials: true,
-    optionSuccessStatus: 200
+    credentials: true
 }
 app.use(cors(corsOption));
 app.use(express.json());
