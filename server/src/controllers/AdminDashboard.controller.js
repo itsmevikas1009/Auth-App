@@ -1,6 +1,6 @@
 import { User } from "../models/user.model.js"
 
-export const AdminDashoard = async (req, res) => {
+export const AdminDashboard = async (req, res) => {
     try {
         if (req.accountType !== 'Admin') {
             return res.json({ status: 402, message: 'You are not admin!' })
